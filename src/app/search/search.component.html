@@ -1,0 +1,25 @@
+<form [formGroup]="form">
+  <div class="form-group has-search">
+    <span class="fa fa-search form-control-feedback"></span>
+    <input
+      type="text"
+      formControlName="appSearch"
+      class="form-control"
+      placeholder="Search"
+      name="search"
+    />
+    <div *ngIf="appSearch.errors" class="alert alert-danger mt-1">
+      <!-- <div *ngIf="appSearch.errors.minlength" class="text-danger">
+        Search should be minimum
+        {{ appSearch.errors.minlength.requiredLength }} charectors.
+      </div>
+      <div *ngIf="appSearch.errors.maxlength" class="text-danger">
+        Search should not more than
+        {{ appSearch.errors.maxlength.requiredLength }} charectors.
+      </div> -->
+      <div *ngIf="appSearch.errors.alphabetsCheck.check" class="text-danger">
+        {{ appSearch.errors.alphabetsCheck.message }}
+      </div>
+    </div>
+  </div>
+</form>
